@@ -94,8 +94,8 @@ psql --version
 
 Clone the repository and install dependencies:
 ```bash
-git clone <your-repository-url>
-cd <repository-directory>
+git clone https://github.com/bogin/finonex.git
+cd finonex
 npm install
 ```
 
