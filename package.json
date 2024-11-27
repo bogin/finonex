@@ -4,8 +4,11 @@
   "description": "A simple ETL (Extract, Transform, Load) system consisting of a client, server, and data processor, using Node.js and PostgreSQL.",
   "main": "client.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "client": "node client.js",
+    "process": "node data_processor.js",
+    "db:setup": "psql -U postgres -d postgres -f db.sql",
+    "db:reset": "psql -U postgres -d postgres -c 'DROP TABLE IF EXISTS users_revenue;' && npm run db:setup"
   },
   "keywords": [],
   "author": "",

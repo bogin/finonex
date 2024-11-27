@@ -12,7 +12,7 @@ A simple ETL (Extract, Transform, Load) system consisting of a client, server, a
 ### 1. Install PostgreSQL
 
 #### On Windows:
-1. Download PostgreSQL installer from [official website](https://www.postgresql.org/download/windows/)
+1. Download PostgreSQL installer from [official website](https://www.postgresql.org/download/windows/) [not official](https://www.enterprisedb.com/postgresql-tutorial-resources-training-2?uuid=d732dc13-c15a-484b-b783-307823940a11&campaignId=Product_Trial_PostgreSQL_16)
 2. Run the installer
 3. Choose default port (5432)
 4. Set password as 'postgres' (or update the connection settings in the code)
@@ -46,6 +46,50 @@ ALTER USER postgres WITH PASSWORD 'postgres';
 \q
 ```
 
+### Add PostgreSQL to PATH
+#### Windows
+
+   ```
+   1. Find your PostgreSQL installation path (typically C:\Program Files\PostgreSQL\[version]\bin)
+   2. Open System Properties (Windows + R, type sysdm.cpl)
+   3. Go to "Advanced" tab
+   4. Click "Environment Variables"
+   5. Under "System Variables", find "Path"
+   6. Click "Edit" -> "New"
+   7. Add your PostgreSQL bin path
+   8. Click "OK" on all windows
+   9. Restart your terminal
+   ```
+
+#### Linux
+The `psql` command should be available after installing PostgreSQL:
+```bash
+# Verify installation
+which psql
+
+# If not found, install PostgreSQL client
+sudo apt-get install postgresql-client  # For Ubuntu/Debian
+sudo yum install postgresql-contrib     # For RHEL/CentOS
+```
+
+#### Mac
+If installed via Homebrew, `psql` should be available. If not:
+```bash
+# Add to PATH (add to ~/.zshrc or ~/.bash_profile)
+export PATH="/usr/local/opt/postgresql/bin:$PATH"
+
+# Or install PostgreSQL client
+brew install libpq
+brew link --force libpq
+```
+
+#### Verifying Installation
+After setup, verify `psql` is accessible:
+```bash
+psql --version
+```
+
+
 ### 3. Install Node.js Dependencies
 
 Clone the repository and install dependencies:
@@ -54,6 +98,7 @@ git clone <your-repository-url>
 cd <repository-directory>
 npm install
 ```
+
 
 ### 4. Set Up Database Schema
 

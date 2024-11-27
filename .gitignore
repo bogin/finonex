@@ -2,3 +2,10 @@ node_modules/
 .env
 *.log
 server_events.jsonl
+concurrent_events.jsonl
+events.jsonl
+large_events.jsonl
+package-lock.json
+server_events.jsonl
+test_etl_system.js
+test_events.jsonl
